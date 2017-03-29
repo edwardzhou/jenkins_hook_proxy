@@ -17,7 +17,8 @@ defmodule JenkinsHookProxy.Web.CallbackController do
             github_headers: %{
               "User-Agent": conn |> get_req_header("user-agent") |> List.first,
               "X-GitHub-Delivery": conn |> get_req_header("x-github-delivery") |> List.first,
-              "X-GitHub-Event": conn |> get_req_header("x-github-event") |> List.first
+              "X-GitHub-Event": conn |> get_req_header("x-github-event") |> List.first,
+              "X-Hub-Signature": conn |> get_req_header("x-hub-signature") |> List.first
             },
             jenkins: %{
               "callback_url": callback.callback_url
