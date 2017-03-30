@@ -22,7 +22,6 @@ defmodule JenkinsHookProxy.Web.Router do
   # Other scopes may use custom stacks.
   scope "/api", JenkinsHookProxy.Web do
     pipe_through :api
-#    resources "/callbacks", CallbackController, only: [:create]
     post "/callbacks/:host_id/:token", CallbackController, :create
   end
 end
